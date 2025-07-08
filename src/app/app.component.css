@@ -1,0 +1,168 @@
+/* Fullscreen and center everything */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background container */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Subtle particle effect (optional movement allowed here) */
+.particles::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,255,255,0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0;
+}
+
+/* Main container */
+.container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 25px;
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  text-align: center;
+  z-index: 2;
+}
+
+/* ✅ Only AI icon floats */
+.avatar {
+  font-size: 50px;
+  margin-bottom: 10px;
+  animation: floatAvatar 2s ease-in-out infinite;
+}
+
+@keyframes floatAvatar {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Heading */
+h1 {
+  font-size: 2rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+  margin-bottom: 20px;
+}
+
+/* Glowing mic */
+.mic-icon {
+  text-shadow: 0 0 15px #00ffff;
+}
+
+/* Buttons */
+button {
+  background: linear-gradient(135deg, #00f2ff, #0044ff);
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px 0 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
+}
+
+/* Static wave bars */
+.wave {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 25px;
+  gap: 5px;
+}
+
+.wave span {
+  display: block;
+  width: 5px;
+  height: 20px;
+  background: #00ffff;
+  border-radius: 5px;
+}
+
+/* Typing effect */
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid #00ffff;
+  white-space: nowrap;
+  animation: typing 2s steps(30, end), blink 0.75s step-end infinite;
+  max-width: 100%;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* Paragraph text */
+p {
+  color: #b0fefe;
+  font-size: 16px;
+}
+
+/* Stop Button */
+.stop-btn {
+  background: #d62a4ce0;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin-top: 10px;
+  margin-left: 30px;
+  font-size: 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff1744aa;
+}
+
+.stop-btn:hover {
+  background: #d50000;
+}
+
+/* Chat History */
+.chat-history {
+  margin-top: 30px;
+  background-color: #1e1e2f;
+  padding: 15px;
+  border-radius: 12px;
+  color: #eee;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+}
+
+.chat-item {
+  margin-bottom: 15px;
+}
+
+.chat-item p {
+  margin: 5px 0;
+}
