@@ -42,7 +42,7 @@ export class AppComponent {
 
 
   sendToAI(text: string) {
-  this.http.post("https://aibootspringboot.onrender.com/api/ask", { message: text }, { responseType: 'text' })
+  this.http.post('https://aibootspringboot.onrender.com/api/ask', { message: text }, { responseType: 'text' })
     .subscribe(response => {
       this.aiResponse = response;
       this.speak(response);
